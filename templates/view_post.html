@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}{{ post.title }}{% endblock %}
+{% block content %}
+<article class="post-full">
+    <h1>{{ post.title }}</h1>
+    <time>{{ post.created_at.strftime('%B %d, %Y at %H:%M') }}</time>
+    <div class="content">
+        {{ html_content | safe }}
+    </div>
+    <a href="{{ url_for('index') }}" class="btn">← Back to Journal</a>
+</article>
+{% endblock %}

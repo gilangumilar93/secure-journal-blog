@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}New Entry{% endblock %}
+{% block content %}
+<div class="form-container">
+    <h1>New Journal Entry</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{ form.title.label }}
+            {{ form.title(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.content.label }}
+            {{ form.content(class="form-control", rows=12, placeholder="Write about your journey... Markdown supported.") }}
+        </div>
+        {{ form.submit(class="btn") }}
+    </form>
+</div>
+{% endblock %}

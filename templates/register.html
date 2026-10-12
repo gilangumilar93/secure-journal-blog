@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Register | Secure Journal{% endblock %}
+{% block content %}
+<div class="auth-container">
+    <h1>Create Your Journal Account</h1>
+    <p class="warning">This creates the single admin account. Registration closes after this.</p>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{ form.username.label }}
+            {{ form.username(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.password.label }}
+            {{ form.password(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.confirm.label }}
+            {{ form.confirm(class="form-control") }}
+        </div>
+        {{ form.submit(class="btn") }}
+    </form>
+</div>
+{% endblock %}
